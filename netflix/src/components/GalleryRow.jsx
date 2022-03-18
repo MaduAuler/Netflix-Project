@@ -1,4 +1,5 @@
 import {Image,Col} from "react-bootstrap";
+import { Component } from "react";
 
 const colStyle= {
     height:'15vh',
@@ -6,17 +7,22 @@ const colStyle= {
     objectFit: 'cover'
   };
 
-const Gallery =(props)=> (
+  class GalleryRow extends Component{
 
-<>
-<Col>
-{props.movies.map((res) => (
-    <Image src={res.Poster} rounded style={colStyle} className="ml-2"/>
-    )).slice(5, 10)
-  }
-</Col>
- </>
+    render() {
+
+      return (
+        <Col>
+        {this.props.movies.map((res) => (
+            <Image src={res.Poster} rounded style={colStyle} className="ml-2"/>
+            )).slice(5, 10)
+          }
+        </Col>
+       
+       
+            
+            )}
  
-)
+}
 
-export default Gallery
+export default GalleryRow
