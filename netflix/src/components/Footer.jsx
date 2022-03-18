@@ -1,50 +1,77 @@
 import React from "react";
-import { Box, Container, Row, Column, FooterLink, Icon } from "./FooterStyles";
 
-import { Button} from "react-bootstrap";
+
+import { Button,Container, ListGroup, ListGroupItem, Row, Col} from "react-bootstrap";
+
+const myStyle= {
+    backgroundColor: "black",
+    color: "white"
+  };
 
 const MyFooter = () => {
+
+const logoStyle ={
+   paddingLeft: "30px",
+    color: "#fff9",
+    
+}
+
+const containerWrapper ={
+    backgroundColor:"black",
+    padding: " 15px 15px",
+    position: "fixed",
+    bottom: "0"
+}
+    
   return (
-    <Box>
-     <Container>
-       <Icon>
+  <Container fluid style={containerWrapper}>
+     <Container style={logoStyle} >
+       
             <i class="bi bi-facebook mx-1"></i>
             <i class="bi bi-instagram mx-1"></i>
         <i class="bi bi-twitter mx-1"></i>
         <i class="bi bi-youtube mx-1"></i>
-       </Icon>
+       
        </Container>
      
-      <Container>
+      <Container >
         <Row>
-          <Column>
-            <FooterLink>Audio and Subtitles</FooterLink>
-            <FooterLink >Media Center</FooterLink>
-            <FooterLink >Privacy</FooterLink>
-            <FooterLink >Contact us</FooterLink>
-            <Button variant="outline-light">Service Code</Button>
-          </Column>
-          <Column>
-            <FooterLink>Audio Description</FooterLink>
-            <FooterLink>Investor Relations</FooterLink>
-            <FooterLink >Legal Notices</FooterLink>
-          </Column>
-          <Column>
-            <FooterLink>Help Center</FooterLink>
-            <FooterLink >Jobs</FooterLink>
-            <FooterLink >Cookie</FooterLink>
-            <FooterLink >Preferences</FooterLink>
-          </Column>
-          <Column>
-            <FooterLink >Gift Cards</FooterLink>
-            <FooterLink >Terms of Use</FooterLink>
-            <FooterLink>Corporate</FooterLink>
-            <FooterLink>Information</FooterLink>
-          </Column>
+         <Col>
+              <ListGroup variant="flush">
+                <ListGroupItem style={myStyle} >Audio and Subtitles</ListGroupItem>
+                <ListGroupItem style={myStyle} >Media Center</ListGroupItem>
+                <ListGroupItem style={myStyle} >Privacy</ListGroupItem>
+                <ListGroupItem style={myStyle} >Contact us</ListGroupItem>
+                <Button variant="outline-light">Service Code</Button>
+              </ListGroup>
+         </Col>
+        <Col>
+              <ListGroup variant="flash">
+                <ListGroupItem style={myStyle} >Audio Description</ListGroupItem>
+                <ListGroupItem style={myStyle}>Investor Relations</ListGroupItem>
+                <ListGroupItem style={myStyle}>Legal Notices</ListGroupItem>
+              </ListGroup>
+        </Col>
+          <Col>
+              <ListGroup variant="flash">
+                <ListGroupItem style={myStyle}>Help Center</ListGroupItem>
+                <ListGroupItem style={myStyle} >Jobs</ListGroupItem>
+                <ListGroupItem style={myStyle}>Cookie</ListGroupItem>
+                <ListGroupItem style={myStyle}>Preferences</ListGroupItem>
+              </ListGroup>
+          </Col>
+          <Col>
+              <ListGroup variant="flash">
+                <ListGroupItem style={myStyle} >Gift Cards</ListGroupItem>
+                <ListGroupItem style={myStyle}>Terms of Use</ListGroupItem>
+                <ListGroupItem style={myStyle}>Corporate</ListGroupItem>
+                <ListGroupItem style={myStyle}>Information</ListGroupItem>
+              </ListGroup>
+          </Col>
         </Row>
       </Container>
-    </Box>
-
+    
+      </Container>
 
   );
 };
