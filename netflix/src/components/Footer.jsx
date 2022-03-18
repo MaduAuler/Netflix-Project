@@ -19,8 +19,7 @@ const logoStyle ={
 const containerWrapper ={
     backgroundColor:"black",
     padding: " 15px 15px",
-    position: "fixed",
-    bottom: "0"
+   
 }
     
   return (
@@ -71,7 +70,7 @@ const containerWrapper ={
         </Row>
       </Container>
     
-      </Container>
+  </Container>
 
   );
 };
