@@ -13,13 +13,11 @@ const colStyle= {
       searchQuery: ''
   }
   
-  componentDidMount(){
-    this.state.searchQuery.length>0 && this.fetchMovies()
-  }
+ 
 
- fetchMovies = async () => {
+ fetchMovies = async (query) => {
    try {
-     let response = await fetch("http://www.omdbapi.com/?apikey=9448849c&s=" + this.state.searchQuery )
+     let response = await fetch("http://www.omdbapi.com/?apikey=9448849c&s=" + query )
        if(response.ok) {
            const data = await response.json()
            this.setState({stateMovies: data.Search}, ()=> console.log(this.state.stateMovies))
@@ -36,25 +34,28 @@ const colStyle= {
 
       return (
         <>
-        <Form>
+        <Form onSubmit={(event)=> event.preventDefault()}>
         <Form.Group controlId="formBasicEmail">
         <Form.Label>Search</Form.Label>
         <Form.Control
             type="text"
             placeholder="Search here"
-            value={this.state.searchQuery}
-            onChange={e => this.setState({ searchQuery: e.target.value })}
+            /*value={this.state.searchQuery}*/
+            onKeyUp={e => {
+              console.log(e)
+              if (e.key=="Enter") {
+              this.fetchMovies(e.target.value)
+              }}}
+              
        />
     </Form.Group>
-    <Button variant="primary" type="submit" onClick={e => this.setState({ searchQuery: e.target.value })}>
-    Submit
-  </Button>
+    
     </Form>
     
     <Col>
        {
         
-        this.state.searchQuery.length>0 && this.state.stateMovies
+        this.state.stateMovies
         
         .map(b => (
           <Image src={b.Poster} rounded style={colStyle} className="ml-2"/>
