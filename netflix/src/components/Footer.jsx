@@ -3,14 +3,29 @@ import React from "react";
 
 import { Button,Container, ListGroup, ListGroupItem, Row, Col} from "react-bootstrap";
 
+const myStyle= {
+    backgroundColor: "black",
+    color: "white"
+  };
+
 const MyFooter = () => {
 
+const logoStyle ={
+   paddingLeft: "30px",
+    color: "#fff9",
+    
+}
 
-
+const containerWrapper ={
+    backgroundColor:"black",
+    padding: " 15px 15px",
+    position: "fixed",
+    bottom: "0"
+}
     
   return (
-  <Container fluid style={{backgroundColor:"black"}}>
-     <Container className="pt-3 pb-3">
+  <Container fluid style={containerWrapper}>
+     <Container style={logoStyle} >
        
             <i class="bi bi-facebook mx-1"></i>
             <i class="bi bi-instagram mx-1"></i>
@@ -19,38 +34,38 @@ const MyFooter = () => {
        
        </Container>
      
-      <Container style={{backgroundColor:"black"}}>
+      <Container >
         <Row>
          <Col>
               <ListGroup variant="flush">
-                <ListGroupItem style={{backgroundColor:"black"}} className="text-white">Audio and Subtitles</ListGroupItem>
-                <ListGroupItem style={{backgroundColor:"black"}} className="text-white">Media Center</ListGroupItem>
-                <ListGroupItem style={{backgroundColor:"black"}} className="text-white">Privacy</ListGroupItem>
-                <ListGroupItem style={{backgroundColor:"black"}} className="text-white">Contact us</ListGroupItem>
+                <ListGroupItem style={myStyle} >Audio and Subtitles</ListGroupItem>
+                <ListGroupItem style={myStyle} >Media Center</ListGroupItem>
+                <ListGroupItem style={myStyle} >Privacy</ListGroupItem>
+                <ListGroupItem style={myStyle} >Contact us</ListGroupItem>
                 <Button variant="outline-light">Service Code</Button>
               </ListGroup>
          </Col>
         <Col>
               <ListGroup variant="flash">
-                <ListGroupItem >Audio Description</ListGroupItem>
-                <ListGroupItem>Investor Relations</ListGroupItem>
-                <ListGroupItem >Legal Notices</ListGroupItem>
+                <ListGroupItem style={myStyle} >Audio Description</ListGroupItem>
+                <ListGroupItem style={myStyle}>Investor Relations</ListGroupItem>
+                <ListGroupItem style={myStyle}>Legal Notices</ListGroupItem>
               </ListGroup>
         </Col>
           <Col>
               <ListGroup variant="flash">
-                <ListGroupItem>Help Center</ListGroupItem>
-                <ListGroupItem >Jobs</ListGroupItem>
-                <ListGroupItem >Cookie</ListGroupItem>
-                <ListGroupItem>Preferences</ListGroupItem>
+                <ListGroupItem style={myStyle}>Help Center</ListGroupItem>
+                <ListGroupItem style={myStyle} >Jobs</ListGroupItem>
+                <ListGroupItem style={myStyle}>Cookie</ListGroupItem>
+                <ListGroupItem style={myStyle}>Preferences</ListGroupItem>
               </ListGroup>
           </Col>
           <Col>
               <ListGroup variant="flash">
-                <ListGroupItem >Gift Cards</ListGroupItem>
-                <ListGroupItem >Terms of Use</ListGroupItem>
-                <ListGroupItem>Corporate</ListGroupItem>
-                <ListGroupItem>Information</ListGroupItem>
+                <ListGroupItem style={myStyle} >Gift Cards</ListGroupItem>
+                <ListGroupItem style={myStyle}>Terms of Use</ListGroupItem>
+                <ListGroupItem style={myStyle}>Corporate</ListGroupItem>
+                <ListGroupItem style={myStyle}>Information</ListGroupItem>
               </ListGroup>
           </Col>
         </Row>
