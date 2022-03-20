@@ -23,7 +23,7 @@ const Header = (props) =>  {
 
                 </div>
                 <div className="mt-2">
-                    <i class="bi bi-list lg"></i>
+                    <i class="bi bi-list"></i>
                 </div>
             </div>
 
