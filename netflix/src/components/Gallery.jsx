@@ -23,7 +23,7 @@ class Gallery extends Component {
       let response = await fetch("http://www.omdbapi.com/?apikey=9448849c&s=harry%20potter" )
         if(response.ok) {
             const data = await response.json()
-            this.setState({stateMovies: data.Search}, ()=> console.log(this.state.stateMovies))
+            this.setState({stateMovies: data.Search})
               
           } else {
               console.log('error while fetching')
