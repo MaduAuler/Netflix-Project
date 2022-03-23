@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import {useState, useEffect} from 'react'
-import {Image,Col} from "react-bootstrap";
+import {Card,Col, Container, Row} from "react-bootstrap";
 
 
 
@@ -13,11 +13,11 @@ const MovieDetails = () => {
 
     useEffect( () => {
         fetchMovies();
-    })
+    }, [])
 
   const fetchMovies = async () => {
     try {
-      let response = await fetch("http://www.omdbapi.com/?apikey=9448849c&i=" +  params ) 
+      let response = await fetch("http://www.omdbapi.com/?apikey=9448849c&i=" +  params.moviesId ) 
         if(response.ok) {
             const data = await response.json()
            setMovies(data )
@@ -31,10 +31,27 @@ const MovieDetails = () => {
         }
       }
     return (
-        <Col>
+        <Container className="d-flex justify-content-center">
+            <>
+            <Row>
+        <Col className="m-5">
     
-            <Image src={movies.Poster}  className="ml-2"/>
+           {movies && 
+           
+           <Card style={{ width: '18rem' }}>
+  <Card.Img variant="top" src={movies.Poster} />
+  <Card.Body >
+    <Card.Title>{movies.Title}e</Card.Title>
+    <Card.Text>
+      {movies.Actors}
+    </Card.Text>
+
+  </Card.Body>
+</Card>}
         </Col>
+        </Row>
+        </>
+        </Container>
     )
 
 }

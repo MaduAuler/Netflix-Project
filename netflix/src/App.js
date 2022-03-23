@@ -16,8 +16,6 @@ function App() {
     <BrowserRouter>
       <NavBar/>
       <Header/>
-    
-     
     <Routes>
     <Route path= "/" element={<Gallery/>}/>
       <Route path='/tv-shows' element={<TvShows />}/>
