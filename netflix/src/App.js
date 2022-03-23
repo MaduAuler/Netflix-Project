@@ -17,10 +17,9 @@ function App() {
        <Routes>
          <Route path='/' element={<Home/>} />
          <Route path='/tv-shows' element={<TvShows />} />
-         <Route path ='/movie-details' element ={<MovieDetails/>} />
+         <Route path ='/movie-details/:movieID' element ={<MovieDetails/>} />
        </Routes>
-      {/*  <Header/>
-       <Gallery/> */}
+     
        <MyFooter />
      </BrowserRouter>
       
